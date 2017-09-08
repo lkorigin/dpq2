@@ -4,16 +4,19 @@ debug import std.experimental.logger;
 
 shared static this()
 {
-    debug
-    {
-        trace("DerelictPQ loading...");
-    }
+    version(Derelict_Static) {}
+    else {
+        debug
+        {
+            trace("DerelictPQ loading...");
+        }
 
-    DerelictPQ.load();
+        DerelictPQ.load();
 
-    debug
-    {
-        trace("...DerelictPQ loading finished");
+        debug
+        {
+            trace("...DerelictPQ loading finished");
+        }
     }
 }
 
